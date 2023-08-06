@@ -28,4 +28,11 @@ public class SampleController {
         logger.info(id); // 콘솔에 아이디 잘 찍히는 지 확인
         return "/hello.html";
     }
+
+    @GetMapping(
+            value = "/get-profile"
+    )
+    public @ResponseBody SamplePayload getProfile(){ // response body로 return 값을 보내고 싶다면 저 어노테이션 해줘야함
+        return new SamplePayload("taeho", 25, "student");
+    }
 }
